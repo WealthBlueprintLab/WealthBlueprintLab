@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Wealth Quiz - Discover Your Investor Persona</title>
+    <meta name="description"
+        content="Take the 60-second crypto wealth quiz to discover your investor type and get a free personalized strategy PDF.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- Urgency Bar -->
+    <div class="urgency-bar">
+        <p>🔥 Free Personalized Report Available For Today Only</p>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-headline">Discover Your <span class="highlight">Crypto
+                        Wealth Path</span> In 60 Seconds
+                </h1>
+                <p class="hero-subhead">Stop guessing. Get a personalized roadmap tailored
+                    to your risk tolerance,
+                    goals, and experience level.</p>
+                <a href="#quiz-section" class="btn btn-primary btn-large pulse">Start My Wealth Quiz</a>
+                <div class="trust-tag">
+                    <span>⏱️ Takes less than 60 seconds</span>
+                    <span>•</span>
+                    <span>🎯 Personalized</span>
+                    <span>•</span>
+                    <span>✅ Beginner-friendly</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Quiz Intro & Benefits -->
+    <section class="intro-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Unlock Your Personal Crypto Strategy</h2>
+                <p>Most investors fail because they follow generic advice. This quiz
+                    reveals:</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="icon">🔍</div>
+                    <h3>Your Investor Type</h3>
+                    <p>Are you a Builder, Trader, or Yielder? Know your strength.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">⚠️</div>
+                    <h3>Your #1 Mistake</h3>
+                    <p>Identify the hidden trap that could cost you thousands.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">🚀</div>
+                    <h3>Your Smart Path</h3>
+                    <p>A clear, step-by-step roadmap to reach your financial goals.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">📄</div>
+                    <h3>Free Custom PDF</h3>
+                    <p>Get a tailored guide delivered straight to your inbox.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="social-proof-section">
+        <div class="container">
+            <div class="trust-logos">
+                <span>FEATURED IN:</span>
+                <div class="logo-grid">
+                    <div class="trust-logo">CryptoDaily</div>
+                    <div class="trust-logo">CoinDesk</div>
+                    <div class="trust-logo">Bloomberg</div>
+                    <div class="trust-logo">Yahoo Finance</div>
+                </div>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="quote">"I was totally lost in crypto until I took this quiz. The 'Wealth Builder' roadmap
+                        changed everything for me."</p>
+                    <div class="author">
+                        <div class="avatar">MJ</div>
+                        <div class="info">
+                            <strong>Michael J.</strong>
+                            <span>Wealth Builder</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="quote">"Finally, a strategy that fits my busy schedule. The Passive Income guide is pure
+                        gold."</p>
+                    <div class="author">
+                        <div class="avatar">Sarah</div>
+                        <div class="info">
+                            <strong>Sarah T.</strong>
+                            <span>Passive Earner</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="quote">"The risk management protocols saved my portfolio during the last dip. Highly
+                        recommended."</p>
+                    <div class="author">
+                        <div class="avatar">David</div>
+                        <div class="info">
+                            <strong>David R.</strong>
+                            <span>Active Trader</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section id="quiz-section" class="quiz-section">
+        <div class="container">
+            <div class="quiz-container" id="quiz-app">
+                <!-- Quiz content will be injected here by JS -->
+                <div class="quiz-start-view">
+                    <h2>Ready to find your path?</h2>
+                    <p>Answer 10 simple questions to get your personalized report.</p>
+                    <button id="start-quiz-btn" class="btn btn-primary">Start My Wealth Quiz</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bridge Section Container (Hidden by default, populated by JS) -->
+    <div id="bridge-section-container"></div>
+
+    <!-- Free PDF Bonuses -->
+    <section class="bonuses-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get Your Free Personalized Roadmap</h2>
+                <p>Based on your results, you'll unlock one of these exclusive guides:</p>
+            </div>
+            <div class="bonuses-grid">
+                <div class="bonus-item">
+                    <div class="bonus-mockup beginner-bg">Crypto Starter Blueprint</div>
+                    <p>For Beginners</p>
+                </div>
+                <div class="bonus-item">
+                    <div class="bonus-mockup builder-bg">Smart Wealth Builder</div>
+                    <p>For Long-Term Investors</p>
+                </div>
+                <div class="bonus-item">
+                    <div class="bonus-mockup trader-bg">Active Trader’s Playbook</div>
+                    <p>For Traders</p>
+                </div>
+                <div class="bonus-item">
+                    <div class="bonus-mockup passive-bg">Passive Income Guide</div>
+                    <p>For Yield Seekers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust & Credibility -->
+    <section class="trust-section">
+        <div class="container">
+            <h2>Why Trust This Process?</h2>
+            <ul class="trust-list">
+                <li>✅ <strong>No Hype, No BS:</strong> Just clear, actionable frameworks.
+                </li>
+                <li>✅ <strong>Western-Focused:</strong> Strategies designed for US, UK, CA,
+                    and AU markets.</li>
+                <li>✅ <strong>Safety First:</strong> Learn to avoid common scams and protect
+                    your capital.</li>
+                <li>✅ <strong>Proven Systems:</strong> Based on data, not random signals or
+                    guesswork.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Transition -->
+    <section class="transition-section">
+        <div class="container">
+            <p class="transition-text">"Once you know your investor type, the next step is
+                getting a proven roadmap..."
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Product (Hard Sell) -->
+    <section class="product-section">
+        <div class="container">
+            <div class="product-content">
+                <span class="badge">RECOMMENDED PROGRAM</span>
+                <h2>WealthBlueprintLab: The Complete System</h2>
+                <p class="product-description">
+                    Whether you're a total beginner or an experienced trader,
+                    WealthBlueprintLab gives you the exact
+                    tools, strategies, and mentorship you need to succeed in the crypto
+                    market.
+                </p>
+
+                <div class="product-features">
+                    <h3>What You Get Inside:</h3>
+                    <ul>
+                        <li>🚀 <strong>Step-by-Step Video Training:</strong> From setting up
+                            your wallet to advanced
+                            trading strategies.</li>
+                        <li>🛡️ <strong>Risk Management Protocols:</strong> How to protect
+                            your downside while
+                            maximizing upside.</li>
+                        <li>📊 <strong>Market Analysis Tools:</strong> Spot trends before
+                            they happen.</li>
+                        <li>🧠 <strong>Investor Mindset Mastery:</strong> Overcome fear and
+                            greed.</li>
+                    </ul>
+                </div>
+
+                <div class="cta-box">
+                    <h3>Ready to take control of your financial future?</h3>
+                    <a href="https://www.digistore24.com/redir/363385/WealthBlueprintLab/"
+                        class="btn btn-primary btn-large">Unlock Full Program</a>
+                    <p class="guarantee">🔒 60-Day Money-Back Guarantee</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mid-Funnel Lead Capture -->
+    <section class="mid-funnel-capture">
+        <div class="container">
+            <div class="capture-box">
+                <h3>Not ready for the full program?</h3>
+                <p>Get the free "Crypto Safety Checklist" delivered to your inbox.</p>
+                <div class="email-form-inline">
+                    <input type="email" placeholder="Enter your email" class="email-input-small">
+                    <button class="btn btn-secondary">Get Free Checklist</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <h4>Is this suitable for complete beginners?</h4>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-body">
+                        <p>Yes! The program starts from the absolute basics and builds up.
+                            The "Beginner" track is specifically designed for those with
+                            zero experience.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <h4>How do I get my free PDF?</h4>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-body">
+                        <p>After completing the quiz, simply enter your email address, and
+                            we will send your personalized report directly to your inbox
+                            instantly.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <h4>Is this a "get rich quick" scheme?</h4>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-body">
+                        <p>No. We teach sound investing principles, risk management, and
+                            long-term wealth building. Real results take time and
+                            discipline.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <h4>What if I'm not satisfied with the program?</h4>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-body">
+                        <p>The WealthBlueprintLab comes with a 60-day money-back guarantee.
+                            If you don't find value, you can request a full refund.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <h4>Can I do this on my phone?</h4>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-body">
+                        <p>Absolutely. The entire platform and all training materials are
+                            fully mobile-responsive.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <h4>Is my data safe?</h4>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-body">
+                        <p>Yes. We use industry-standard encryption and never share your
+                            personal details with unauthorized third parties.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <footer class="footer-cta">
+        <div class="container">
+            <h2>Your Journey Starts Now</h2>
+            <script src="assets/js/script.js"></script>
+</body>
+
+</html>

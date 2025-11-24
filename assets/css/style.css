@@ -1,0 +1,847 @@
+/* 
+   Table of Contents
+   =================
+   1. Variables (:root)
+   2. Global Resets & Typography
+   3. Components (Buttons, Urgency Bar)
+   4. Hero Section
+   5. Intro Section
+   6. Social Proof Section
+   7. Quiz Section
+   8. Bridge Section
+   9. Bonuses Section
+   10. Product Section
+   11. Mid-Funnel Capture
+   12. FAQ Section
+   13. Trust Section
+   14. Result View
+   15. Footer
+   16. Animations
+*/
+
+:root {
+    --bg-dark: #0f172a;
+    --bg-card: #1e293b;
+    --bg-card-hover: #2d3b4e;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --accent-gold: #fbbf24;
+    --accent-gold-hover: #d97706;
+    --accent-blue: #3b82f6;
+    --accent-blue-hover: #2563eb;
+    --success: #10b981;
+    --font-main: 'Inter', sans-serif;
+    --container-width: 1200px;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    --shadow-glow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+/* 2. Global Resets & Typography */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.highlight {
+    color: var(--accent-gold);
+}
+
+/* 3. Components */
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-blue-hover));
+    color: white;
+    box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(59, 130, 246, 0.5);
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid var(--accent-blue);
+    color: var(--accent-blue);
+}
+
+.btn-secondary:hover {
+    background: rgba(59, 130, 246, 0.1);
+    color: white;
+    border-color: white;
+}
+
+.btn-large {
+    font-size: 1.25rem;
+    padding: 1.2rem 3rem;
+}
+
+.pulse {
+    animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+    0% {
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(59, 130, 246, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+    }
+}
+
+/* Urgency Bar */
+.urgency-bar {
+    background: linear-gradient(90deg, #ef4444, #b91c1c);
+    color: white;
+    text-align: center;
+    padding: 0.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-md);
+}
+
+/* 4. Hero Section */
+.hero-section {
+    padding: 6rem 0 4rem;
+    text-align: center;
+    background: radial-gradient(circle at top, #1e293b 0%, #0f172a 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-headline {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(to right, #fff, #94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subhead {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+}
+
+.trust-tag {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    opacity: 0.8;
+}
+
+/* 5. Intro Section */
+.intro-section {
+    padding: var(--spacing-lg) 0;
+}
+
+.transition-text {
+    text-align: center;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    color: var(--accent-gold);
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.benefit-card {
+    background: var(--bg-card);
+    padding: 2.5rem;
+    border-radius: 16px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.benefit-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--accent-blue);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.benefit-card:hover::before {
+    transform: scaleX(1);
+}
+
+.benefit-card .icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* 6. Social Proof Section */
+.social-proof-section {
+    padding: 3rem 0;
+    background: #0b1120;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.trust-logos {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.trust-logos span {
+    display: block;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.logo-grid {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    opacity: 0.5;
+}
+
+.trust-logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: white;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.testimonial-card {
+    background: var(--bg-card);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.testimonial-card .quote {
+    font-style: italic;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-card .author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.testimonial-card .avatar {
+    width: 40px;
+    height: 40px;
+    background: var(--accent-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+}
+
+.testimonial-card .info strong {
+    display: block;
+    font-size: 0.9rem;
+}
+
+.testimonial-card .info span {
+    font-size: 0.8rem;
+    color: var(--accent-gold);
+}
+
+/* 7. Quiz Section */
+.quiz-section {
+    padding: var(--spacing-lg) 0;
+    background: radial-gradient(circle at center, #1e293b 0%, #0b1120 100%);
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+}
+
+.quiz-container {
+    background: var(--bg-card);
+    padding: 3rem;
+    border-radius: 24px;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    min-height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+.quiz-start-view {
+    text-align: center;
+}
+
+.quiz-start-view h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, #fff, #cbd5e1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Improved Progress Bar */
+.progress-bar {
+    width: 100%;
+    height: 12px;
+    background: #334155;
+    border-radius: 10px;
+    margin-bottom: 2.5rem;
+    overflow: hidden;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(45deg,
+            var(--accent-blue) 25%,
+            #60a5fa 25%,
+            #60a5fa 50%,
+            var(--accent-blue) 50%,
+            var(--accent-blue) 75%,
+            #60a5fa 75%,
+            #60a5fa);
+    background-size: 20px 20px;
+    animation: progress-stripe 1s linear infinite;
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 10px var(--accent-blue);
+}
+
+@keyframes progress-stripe {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 20px 20px;
+    }
+}
+
+.question-text {
+    font-size: 1.75rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.quiz-option {
+    background: #334155;
+    padding: 1.2rem 1.5rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 2px solid transparent;
+    text-align: left;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+}
+
+.quiz-option:hover {
+    background: #475569;
+    border-color: var(--accent-blue);
+    transform: translateX(5px);
+}
+
+.quiz-option.selected {
+    background: var(--accent-blue);
+    color: white;
+    border-color: var(--accent-blue);
+}
+
+.nav-buttons {
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Email Form */
+.email-form-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.email-input {
+    width: 100%;
+    padding: 1.2rem;
+    border-radius: 8px;
+    border: 2px solid #475569;
+    background: #0f172a;
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    transition: border-color 0.3s;
+}
+
+.email-input:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+}
+
+/* 8. Bridge Section */
+.bridge-section {
+    padding: 4rem 0;
+    text-align: center;
+    background: #1e293b;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    animation: fadeIn 0.5s ease-in;
+}
+
+.bridge-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.bridge-content h3 {
+    font-size: 2rem;
+    color: var(--accent-gold);
+    margin-bottom: 1rem;
+}
+
+/* 9. Bonuses Section */
+.bonuses-section {
+    padding: var(--spacing-lg) 0;
+    background: #0b1120;
+}
+
+.bonuses-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.bonus-item {
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.bonus-item:hover {
+    transform: translateY(-5px);
+}
+
+.bonus-mockup {
+    width: 220px;
+    height: 300px;
+    background: #334155;
+    border-radius: 4px 12px 12px 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    box-shadow:
+        inset 10px 0 20px rgba(0, 0, 0, 0.2),
+        5px 5px 15px rgba(0, 0, 0, 0.3),
+        10px 10px 30px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    padding: 1.5rem;
+    color: #fff;
+    position: relative;
+    border-left: 8px solid rgba(255, 255, 255, 0.1);
+}
+
+.beginner-bg {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+}
+
+.builder-bg {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.trader-bg {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.passive-bg {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+}
+
+/* 10. Product Section */
+.product-section {
+    padding: var(--spacing-lg) 0;
+    background: linear-gradient(to bottom, #1e293b, #0f172a);
+}
+
+.product-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 4rem;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.badge {
+    background: var(--accent-gold);
+    color: #000;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 800;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+}
+
+.product-features {
+    text-align: left;
+    max-width: 650px;
+    margin: 3rem auto;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    border-radius: 12px;
+}
+
+.product-features ul {
+    list-style: none;
+}
+
+.product-features li {
+    margin-bottom: 1.2rem;
+    font-size: 1.1rem;
+    display: flex;
+    gap: 10px;
+}
+
+.cta-box {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.05));
+    padding: 3rem;
+    border-radius: 16px;
+    margin-top: 3rem;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+/* 11. Mid-Funnel Capture */
+.mid-funnel-capture {
+    padding: 4rem 0;
+    background: #0f172a;
+}
+
+.capture-box {
+    background: var(--bg-card);
+    padding: 3rem;
+    border-radius: 16px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.email-form-inline {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.email-input-small {
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #475569;
+    background: #0f172a;
+    color: white;
+    min-width: 300px;
+}
+
+/* 12. FAQ Section */
+.faq-section {
+    padding: var(--spacing-lg) 0;
+    background: #0b1120;
+}
+
+.faq-accordion {
+    max-width: 1100px;
+    margin: 3rem auto 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.faq-item {
+    background: var(--bg-card);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.faq-header {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.faq-header:hover {
+    background: #2d3b4e;
+}
+
+.faq-item.active {
+    border-color: var(--accent-blue);
+    background: #1e293b;
+}
+
+.faq-item.active .toggle-icon {
+    color: var(--accent-blue);
+    transform: rotate(180deg);
+}
+
+.faq-item.active .faq-body {
+    max-height: 300px;
+}
+
+.faq-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.faq-body p {
+    padding: 1rem 1.5rem 1.5rem;
+    color: var(--text-secondary);
+}
+
+/* 13. Trust Section - Right Aligned */
+.trust-section {
+    padding: var(--spacing-lg) 0;
+    text-align: center;
+}
+
+.trust-list {
+    list-style: none;
+    max-width: 600px;
+    /* Reset to center as requested */
+    margin: 2rem auto;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.trust-list li {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    display: flex;
+    gap: 10px;
+}
+
+/* 14. Result View Styles - Improved PDF Card */
+.result-view {
+    text-align: center;
+}
+
+.result-pdf-placeholder {
+    background: var(--bg-card);
+    padding: 2rem;
+    border-radius: 4px 12px 12px 4px;
+    margin: 3rem auto;
+    max-width: 320px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow:
+        inset 15px 0 20px rgba(0, 0, 0, 0.3),
+        10px 10px 40px rgba(0, 0, 0, 0.5);
+    position: relative;
+    transform: perspective(1000px) rotateY(-5deg);
+    transition: transform 0.3s ease;
+    border-left: 10px solid rgba(255, 255, 255, 0.1);
+}
+
+.result-pdf-placeholder:hover {
+    transform: perspective(1000px) rotateY(0deg) scale(1.02);
+}
+
+.result-pdf-placeholder .pdf-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.result-pdf-placeholder h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+    color: white;
+}
+
+.result-pdf-placeholder::after {
+    content: 'DOWNLOAD READY';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: var(--success);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(16, 185, 129, 0.4);
+}
+
+.email-notice {
+    color: var(--success);
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.cta-box-result {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 12px;
+    margin-top: 2rem;
+}
+
+/* 15. Footer */
+.footer-cta {
+    padding: 5rem 0;
+    background: #020617;
+    text-align: center;
+    border-top: 1px solid #1e293b;
+}
+
+/* 16. Animations */
+.fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

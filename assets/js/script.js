@@ -3,6 +3,8 @@
  * Handles quiz logic, scoring, and lead capture.
  */
 
+const WEBHOOK_URL = "https://hook.us2.make.com/bvysu14j7epksm4amdwh47wz8tf8m53f"; // PASTE YOUR WEBHOOK URL HERE
+
 // --- Tracking & Analytics ---
 
 function trackEvent(eventName, data = {}) {
@@ -25,13 +27,25 @@ async function submitLead(email, result) {
     });
     localStorage.setItem('crypto_quiz_leads', JSON.stringify(leads));
 
-    // Example Integration:
-    // const webhookUrl = 'YOUR_WEBHOOK_URL_HERE';
-    // await fetch(webhookUrl, {
-    //     method: 'POST',
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify({ email, result, timestamp: new Date().toISOString() })
-    // });
+    // Send data to Make.com
+    if (WEBHOOK_URL) {
+        try {
+            await fetch(WEBHOOK_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    email: email,
+                    persona: result,
+                    timestamp: new Date().toISOString()
+                })
+            });
+            console.log("✅ Lead sent to Make.com");
+        } catch (error) {
+            console.error("❌ Failed to send lead:", error);
+        }
+    } else {
+        console.warn("⚠️ WEBHOOK_URL is empty. Data not sent.");
+    }
 
     return true; // Simulate success
 }
@@ -371,3 +385,39 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// --- Checklist Lead Capture ---
+
+const checklistBtn = document.getElementById('checklist-btn');
+if (checklistBtn) {
+    checklistBtn.addEventListener('click', submitChecklistLead);
+}
+
+async function submitChecklistLead() {
+    const emailInput = document.getElementById('checklist-email');
+    if (!emailInput.value || !emailInput.value.includes('@')) {
+        alert('Please enter a valid email address.');
+        return;
+    }
+
+    const originalText = checklistBtn.innerText;
+    checklistBtn.innerText = "Sending...";
+    checklistBtn.disabled = true;
+
+    // Track Lead
+    trackEvent('checklist_submit', { email: emailInput.value });
+
+    // Send with "Checklist" persona
+    const success = await submitLead(emailInput.value, "Checklist");
+
+    if (success) {
+        checklistBtn.innerText = "Check your inbox! ✅";
+        emailInput.value = "";
+    } else {
+        checklistBtn.innerText = "Error. Try again.";
+        checklistBtn.disabled = false;
+        setTimeout(() => {
+            checklistBtn.innerText = originalText;
+        }, 3000);
+    }
+}

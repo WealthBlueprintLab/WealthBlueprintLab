@@ -835,13 +835,100 @@ h4 {
 }
 
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1.5rem;
     }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    .hero-headline {
+        font-size: 2.2rem;
+        line-height: 1.2;
+    }
+
+    .hero-subhead {
+        font-size: 1.1rem;
+        padding: 0 1rem;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+    }
+
+    /* Product/Recommendation Section Mobile */
+    .product-content {
+        padding: 2rem 1.5rem; /* Reduced padding */
+    }
+
+    .product-features {
+        padding: 1.5rem;
+        margin: 2rem auto;
+    }
+
+    .product-features li {
+        font-size: 1rem;
+    }
+
+    .cta-box {
+        padding: 2rem 1.5rem;
+    }
+
+    .quiz-container {
+        padding: 1.5rem;
+        min-height: auto;
+    }
+
+    .question-text {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .quiz-option {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+
+    .faq-accordion {
+        grid-template-columns: 1fr;
+    }
+
+    .email-form-inline {
+        flex-direction: column;
+    }
+
+    .email-input-small {
+        width: 100%;
+    }
+
+    /* Trust Section Mobile Reset */
+    .trust-list {
+        margin: 2rem auto;
+        max-width: 100%;
+        padding: 1.5rem;
+    }
+
+    .trust-list li {
+        font-size: 1rem;
+    }
+
+    /* PDF Card Mobile */
+    .result-pdf-placeholder {
+        transform: none;
+        max-width: 280px;
+        margin: 2rem auto;
+    }
+
+    .result-pdf-placeholder:hover {
+        transform: none;
+    }
+
+    .btn-large {
+        width: 100%;
+        padding: 1rem;
+        font-size: 1.1rem;
     }
 }
